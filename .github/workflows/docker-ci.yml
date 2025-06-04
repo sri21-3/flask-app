@@ -28,6 +28,7 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/my-flask-app:latest
-            ${{ secrets.DOCKER_USERNAME }}/my-flask-app:${{ github.sha }} # Tag with commit SHA for unique versions
+            # Tag with commit sha for unique versions
+            ${{ secrets.DOCKER_USERNAME }}/my-flask-app:${{ github.sha }} 
           cache-from: type=gha
           cache-to: type=gha,mode=max
